@@ -1,5 +1,5 @@
-basicTypeList = [int, float, str]
-basicContainerList = [list]
+basicTypeList = [int, float, str, bool]
+basicContainerList = [list, tuple]
 
 
 def toDict(src):
@@ -30,6 +30,8 @@ def toListDict(oldList):
             newList.append(toListDict(value))
         else:
             newList.append(toDict(value))
+    if type(oldList) == tuple:
+        return tuple(newList)
     return newList
 
 
@@ -57,4 +59,6 @@ def fromListDict(oldList):
             newList.append(fromListDict(value))
         else:
             newList.append(fromDict(value))
+    if type(oldList) == tuple:
+        return tuple(newList)
     return newList
