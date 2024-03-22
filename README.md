@@ -13,6 +13,7 @@ class Position(object):
   y = None
   z = None
 
+
 class Position(object):
   __init__(self, x, y, z):
     # 错误
